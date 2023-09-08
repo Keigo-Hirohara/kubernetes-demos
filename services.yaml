@@ -16,3 +16,21 @@ spec:
       nodePort: 30080
 
   type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hirokei-queue
+
+spec:
+  selector:
+    app: queue
+    release: '1'
+
+  ports:
+    - name: http
+      port: 8161
+      nodePort: 30020
+
+  type: NodePort
